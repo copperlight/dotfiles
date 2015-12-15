@@ -39,4 +39,12 @@ export PATH="$PATH:/usr/local/sbin:$HOME/bin"
 alias curl="curl -g"
 alias g="gvim --remote-silent"
 
-for file in "$HOME"/.dotfiles.d/*; do . "$file"; done
+files=$(find "$HOME"/.dotfiles.d -type f -maxdepth 1 ! -name ".*")
+count=$(find "$HOME"/.dotfiles.d -type f -maxdepth 1 ! -name ".*" |wc -l)
+
+if [[ "$count" -gt 0 ]]; then
+    for file in "$files"; do
+        . "$file"
+    done
+fi
+
