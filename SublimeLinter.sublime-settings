@@ -1,0 +1,81 @@
+{
+    "user": {
+        "debug": true,
+        "delay": 0.25,
+        "error_color": "D02000",
+        "gutter_theme": "Packages/SublimeLinter/gutter-themes/Default/Default.gutter-theme",
+        "gutter_theme_excludes": [],
+        "lint_mode": "load/save",
+        "linters": {
+            "flake8": {
+                "@disable": false,
+                "args": [],
+                "builtins": "",
+                "excludes": [],
+                "ignore": "E501",
+                "jobs": "1",
+                "max-complexity": -1,
+                "max-line-length": 100,
+                "select": "",
+                "show-code": false
+            },
+            "jshint": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "rust": {
+                "@disable": false,
+                "args": [],
+                "crate-root": null,
+                "excludes": [],
+                "use-cargo": false,
+                "use-cargo-check": false,
+                "use-crate-root": false
+            },
+            "scalastyle": {
+                "@disable": false,
+                "args": [
+                    "--config",
+                    "/usr/local/etc/scalastyle_config.xml"
+                ],
+                "excludes": [],
+                "jar_file": "/usr/local/Cellar/scalastyle/0.6.0/libexec/scalastyle_2.10-0.6.0-batch.jar"
+            },
+            "shellcheck": {
+                "@disable": false,
+                "args": [],
+                "exclude": "",
+                "excludes": []
+            }
+        },
+        "mark_style": "outline",
+        "no_column_highlights_line": false,
+        "passive_warnings": false,
+        "paths": {
+            "linux": [],
+            "osx": [
+                "/usr/local/var/pyenv/shims"
+            ],
+            "windows": []
+        },
+        "python_paths": {
+            "linux": [],
+            "osx": [],
+            "windows": []
+        },
+        "rc_search_limit": 3,
+        "shell_timeout": 10,
+        "show_errors_on_save": false,
+        "show_marks_in_minimap": true,
+        "syntax_map": {
+            "html (django)": "html",
+            "html (rails)": "html",
+            "html 5": "html",
+            "php": "html",
+            "python django": "python"
+        },
+        "warning_color": "DDB700",
+        "wrap_find": true
+    }
+}
