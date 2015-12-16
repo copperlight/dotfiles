@@ -10,12 +10,13 @@ DOTFILES_DIR=$(cd "$(dirname "$0")"; pwd |sed -e "s:$HOME/::")
 [[ ! -d ./vim/bundle ]] && mkdir ./vim/bundle && ./vim/update_bundles
 
 # sublime text
+SUBL_DIR="$HOME/$DOTFILES_DIR/subl"
 ln -nsf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-ln -nsf "$HOME/$DOTFILES_DIR/Git.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Git.sublime-settings"
-ln -nsf "$HOME/$DOTFILES_DIR/Groovy.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Groovy.sublime-settings"
-ln -nsf "$HOME/$DOTFILES_DIR/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
-ln -nsf "$HOME/$DOTFILES_DIR/Scala.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Scala.sublime-settings"
-ln -nsf "$HOME/$DOTFILES_DIR/SublimeLinter.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings"
+ln -nsf "$SUBL_DIR/Git.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Git.sublime-settings"
+ln -nsf "$SUBL_DIR/Groovy.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Groovy.sublime-settings"
+ln -nsf "$SUBL_DIR/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+ln -nsf "$SUBL_DIR/Scala.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Scala.sublime-settings"
+ln -nsf "$SUBL_DIR/SublimeLinter.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings"
 
 # install dotfiles
 ln -nsf "$DOTFILES_DIR/bash_profile" "$HOME/.bash_profile"
