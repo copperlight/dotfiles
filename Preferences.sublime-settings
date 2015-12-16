@@ -1,21 +1,21 @@
 {
-    "color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
-    "draw_white_space": "all",
-    "font_size": 13,
-    "ignored_packages":
-    [
-        "Markdown",
-        "Vintage"
-    ],
-    "remember_open_files": false,
-    "rulers":
-    [
-        72,
-        79,
-        100
-    ],
-    "show_encoding": true,
-    "show_line_endings": true,
-    "theme": "Soda Dark 3.sublime-theme",
-    "translate_tabs_to_spaces": true
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"draw_white_space": "all",
+	"font_size": 13,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"remember_open_files": false,
+	"rulers":
+	[
+		72,
+		79,
+		100
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"theme": "Soda Dark 3.sublime-theme",
+	"translate_tabs_to_spaces": true
 }
