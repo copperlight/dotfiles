@@ -42,9 +42,9 @@ alias g="gvim --remote-silent"
 files=$(find "$HOME"/.dotfiles.d -type f -maxdepth 1 ! -name ".*")
 count=$(find "$HOME"/.dotfiles.d -type f -maxdepth 1 ! -name ".*" |wc -l)
 
-if [[ "$count" -gt 0 ]]; then
-    for file in "$files"; do
-        . "$file"
+if [[ $count -gt 0 ]]; then
+    for file in $files; do
+        source $file
     done
 fi
 
