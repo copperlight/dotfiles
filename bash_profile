@@ -44,7 +44,7 @@ count=$(find "$HOME"/.dotfiles.d -type f -maxdepth 1 ! -name ".*" |wc -l)
 
 if [[ $count -gt 0 ]]; then
     for file in $files; do
-        source $file
+        . $file
     done
 fi
 
