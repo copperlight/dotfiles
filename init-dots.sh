@@ -10,13 +10,15 @@ DOTFILES_DIR=$(cd "$(dirname "$0")"; pwd |sed -e "s:$HOME/::")
 [[ ! -d ./vim/bundle ]] && mkdir ./vim/bundle && ./vim/update_bundles
 
 # sublime text
-SUBL_DIR="$HOME/$DOTFILES_DIR/subl"
 ln -nsf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-ln -nsf "$SUBL_DIR/Git.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Git.sublime-settings"
-ln -nsf "$SUBL_DIR/Groovy.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Groovy.sublime-settings"
-ln -nsf "$SUBL_DIR/Preferences.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
-ln -nsf "$SUBL_DIR/Scala.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/Scala.sublime-settings"
-ln -nsf "$SUBL_DIR/SublimeLinter.sublime-settings" "$HOME/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings"
+
+SOURCE_DIR="$HOME/$DOTFILES_DIR/subl"
+TARGET_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+
+for FILE in $SOURCE_DIR/*; do
+    FILE=$(basename "$FILE")
+    ln -nsf "$SOURCE_DIR/$FILE" "$TARGET_DIR/$FILE"
+done
 
 # install dotfiles
 ln -nsf "$DOTFILES_DIR/bash_profile" "$HOME/.bash_profile"
