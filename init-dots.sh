@@ -40,11 +40,14 @@ fi
 ln -nsf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
 SOURCE_DIR="$DOTFILES_DIR/subl"
-TARGET_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+TARGET_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
 
-for FILE in $SOURCE_DIR/*; do
-    FILE=$(basename "$FILE")
-    ln -nsf "$SOURCE_DIR/$FILE" "$TARGET_DIR/$FILE"
+for PACKAGE in $SOURCE_DIR/*; do
+    PACKAGE=$(basename "$PACKAGE")
+    for FILE in $SOURCE_DIR/$PACKAGE/*; do
+        FILE=$(basename "$FILE")
+        ln -nsf "$SOURCE_DIR/$PACKAGE/$FILE" "$TARGET_DIR/$PACKAGE/$FILE"
+    done
 done
 
 # install dotfiles
