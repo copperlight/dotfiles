@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_DIR=$(cd "$(dirname "$0")"; pwd)
+DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 TMP_DIR=$(mktemp -dt dotfiles)
 
 # dotfiles
@@ -39,7 +39,7 @@ fi
 # sublime text
 ln -nsf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 
-SOURCE_DIR="$HOME/$DOTFILES_DIR/subl"
+SOURCE_DIR="$DOTFILES_DIR/subl"
 TARGET_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
 for FILE in $SOURCE_DIR/*; do
