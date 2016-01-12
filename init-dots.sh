@@ -44,6 +44,7 @@ TARGET_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages"
 
 for PACKAGE in $SOURCE_DIR/*; do
     PACKAGE=$(basename "$PACKAGE")
+    [ ! -d "$TARGET_DIR/$PACKAGE" ] && mkdir -p "$TARGET_DIR/$PACKAGE"
     for FILE in $SOURCE_DIR/$PACKAGE/*; do
         FILE=$(basename "$FILE")
         ln -nsf "$SOURCE_DIR/$PACKAGE/$FILE" "$TARGET_DIR/$PACKAGE/$FILE"
