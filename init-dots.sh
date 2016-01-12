@@ -47,6 +47,7 @@ for PACKAGE in $SOURCE_DIR/*; do
     [ ! -d "$TARGET_DIR/$PACKAGE" ] && mkdir -p "$TARGET_DIR/$PACKAGE"
     for FILE in $SOURCE_DIR/$PACKAGE/*; do
         FILE=$(basename "$FILE")
+        [ -d "$TARGET_DIR/$PACKAGE/$FILE" ] && rm -rf "${TARGET_DIR:?}/$PACKAGE/$FILE"
         ln -nsf "$SOURCE_DIR/$PACKAGE/$FILE" "$TARGET_DIR/$PACKAGE/$FILE"
     done
 done
