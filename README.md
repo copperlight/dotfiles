@@ -40,6 +40,7 @@ Configures a leiningen profile that supports the lein-exec plugin, which makes i
     1. Disable flake8 line length warnings.
     1. Point to pyenv shims as a source for Python binaries.
     1. Point to location of scalastyle.
+    1. Add generated color schemes with BracketHighlighter support.
 1. Fix Groovy comment toggle.
 1. Configure colors for BracketHighlighter.
 1. Disable single-quote matching for Clojure files.
@@ -48,6 +49,9 @@ Configures a leiningen profile that supports the lein-exec plugin, which makes i
 1. Set Scala indents to two spaces.
 1. Configure a reasonable prompt for SublimeREPL Shell.
 1. Associate cljc files with Clojure.
+
+
+Getting Soda Theme, BracketHighlighter and SublimeLinter to play together is an unusual process.  You have to manually download the color schemes for Soda and drop them into place in the User directory, then edit them to add BracketHighlighter colors for the gutter icons.  After this, you have to manually set your color scheme to this modified scheme, then quit SublimeText and restart.  SublimeLinter will detect the modified scheme in use and generate a new one with its own gutter configuration additions.  The resulting generated files are saved in the dotfile collection.
 
 ## vim
 
