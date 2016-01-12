@@ -34,7 +34,7 @@ else
     mv "$TMP_DIR/pathogen.vim" ./vim/autoload
 fi
 
-[[ ! -d ./vim/bundle ]] && mkdir ./vim/bundle && ./vim/update_bundles
+[[ ! -d ./vim/bundle ]] && mkdir ./vim/bundle && ./vim/update_bundles.py
 
 # sublime text
 ln -nsf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl

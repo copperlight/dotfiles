@@ -80,8 +80,8 @@ for name, script_id, script_type in vim_org_scripts:
         url = "http://www.vim.org/scripts/download_script.php?src_id={}".format(script_id)
         r = requests.get(url, stream=True)
         with open(local_file, "wb") as f:
-            for chunk in r.iter_content(chunk_size=1024): 
-                if chunk: # filter out keep-alive new chunks
+            for chunk in r.iter_content(chunk_size=1024):
+                if chunk:  # filter out keep-alive new chunks
                     f.write(chunk)
     else:
         print("script exists {}".format(name))
