@@ -23,6 +23,10 @@ switch_jdk() {
     echo "JAVA_HOME=$JAVA_HOME"
 }
 
+# jenv
+#export JENV_ROOT=/usr/local/var/jenv
+#if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
 # go
 export GOPATH="$HOME/gopath"
 export GOBIN="$GOPATH/bin"
