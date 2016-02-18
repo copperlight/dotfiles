@@ -1,3 +1,9 @@
+# ansible
+set -x ANSIBLE_HOST_KEY_CHECKING False
+
+# autojump
+test -s (brew --prefix)/share/autojump/autojump.fish; and source (brew --prefix)/share/autojump/autojump.fish
+
 # java
 set -x JAVA7_HOME (/usr/libexec/java_home -v 1.7)
 set -x JAVA8_HOME (/usr/libexec/java_home -v 1.8)
