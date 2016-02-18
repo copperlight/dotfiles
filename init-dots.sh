@@ -53,11 +53,12 @@ for PACKAGE in $SOURCE_DIR/*; do
 done
 
 # fish
-[[ ! -d "$HOME/.config/fish" ]] && mkdir "$HOME/.config/fish"
+[[ ! -d "$HOME/.config/fish" ]] && mkdir -p "$HOME/.config/fish"
 
 # install dotfiles
 ln -nsf "$DOTFILES_DIR/bash_profile" "$HOME/.bash_profile"
 ln -nsf "$DOTFILES_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -nsf "$DOTFILES_DIR/fish/functions" "$HOME/.config/fish/functions"
 ln -nsf "$DOTFILES_DIR/vim" "$HOME/.vim"
 ln -nsf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
 
