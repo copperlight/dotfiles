@@ -3,7 +3,7 @@
 DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 TMP_DIR=$(mktemp -dt dotfiles)
 
-# dotfiles
+# secrets
 [[ ! -d "$HOME/.dotfiles.d" ]] && mkdir "$HOME/.dotfiles.d"
 
 # clojure
@@ -52,8 +52,12 @@ for PACKAGE in $SOURCE_DIR/*; do
     done
 done
 
+# fish
+[[ ! -d "$HOME/.config/fish" ]] && mkdir "$HOME/.config/fish"
+
 # install dotfiles
 ln -nsf "$DOTFILES_DIR/bash_profile" "$HOME/.bash_profile"
+ln -nsf "$DOTFILES_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -nsf "$DOTFILES_DIR/vim" "$HOME/.vim"
 ln -nsf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
 

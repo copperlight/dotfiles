@@ -11,6 +11,7 @@ git_bundles = [
     "git://github.com/altercation/vim-colors-solarized",
     "git://github.com/astashov/vim-ruby-debugger.git",
     "git://github.com/corntrace/bufexplorer",
+    "git://github.com/dag/vim-fish.git",
     "git://github.com/derekwyatt/vim-scala",
     "git://github.com/fatih/vim-go.git",
     "git://github.com/guns/vim-clojure-static.git",
