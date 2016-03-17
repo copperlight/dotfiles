@@ -56,6 +56,7 @@ done
 [[ ! -d "$HOME/.config/fish" ]] && mkdir -p "$HOME/.config/fish"
 
 # ipython
+[[ ! -d "$HOME/.ipython/profile_default" ]] && mkdir -p "$HOME/.ipython/profile_default"
 [[ -d "$HOME/.ipython/profile_default/startup" ]] && rm -rf "$HOME/.ipython/profile_default/startup"
 
 # install dotfiles
