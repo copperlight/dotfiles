@@ -33,6 +33,19 @@ Configures a leiningen profile that supports the lein-exec plugin, which makes i
 ;; Grab and print the title element from the Google front page using Enlive
 (println (html/select (html/html-resource (java.net.URL. "http://google.com")) [:title]))
 ```
+(Pomegranate)[https://github.com/cemerick/pomegranate] has been added as a dependency for the repl.  This makes it easy to interactively add dependencies in a repl session, like so:
+
+```
+(use '[cemerick.pomegranate :only (add-dependencies)])
+
+(add-dependencies :coordinates '[[incanter "0.5.0"]]
+                  :repositories (merge cemerick.pomegranate.aether/maven-central
+                                       {"clojars" "http://clojars.org/repo"}))
+
+(use 'stencil.core)
+(render-string "Hi there, {{name}}."
+               {:name "Donald"})
+```
 
 ## SublimeText
 
