@@ -3,6 +3,10 @@
 DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 TMP_DIR=$(mktemp -dt dotfiles)
 
+# keybindings
+[[ ! -d "$HOME/Library/KeyBindings" ]] && mkdir "$HOME/Library/KeyBindings"
+ln -nsf "$DOTFILES_DIR/osx/DefaultKeyBinding.Dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.Dict"
+
 # secrets
 [[ ! -d "$HOME/.dotfiles.d" ]] && mkdir "$HOME/.dotfiles.d"
 
