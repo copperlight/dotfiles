@@ -15,6 +15,7 @@ packages=(
     "git"
     "leiningen"
     "pyenv"
+    "the_silver_searcher"
 )
 
 for p in "${packages[@]}"; do
@@ -30,7 +31,10 @@ pyenv install 3.5.1
 pyenv global 2.7.11
 
 packages=(
+    "awscli"
     "gitpython"
+    "ipython"
+    "--no-binary :all: jupyter"
     "requests"
 )
 
