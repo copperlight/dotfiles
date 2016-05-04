@@ -1,0 +1,27 @@
+{
+    "installed_packages":
+    [
+        "BracketHighlighter",
+        "EditorConfig",
+        "Enhanced Clojure",
+        "FileDiffs",
+        "fish-shell",
+        "Git",
+        "GitGutter",
+        "Gradle_Language",
+        "Jedi - Python autocompletion",
+        "lispindent",
+        "Markdown Preview",
+        "Origami",
+        "Package Control",
+        "ShellCommand",
+        "SublimeLinter",
+        "SublimeLinter-contrib-scalastyle",
+        "SublimeLinter-flake8",
+        "SublimeLinter-shellcheck",
+        "SublimeREPL",
+        "Theme - Soda",
+        "TrailingSpaces",
+        "View In Browser"
+    ]
+}

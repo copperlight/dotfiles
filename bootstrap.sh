@@ -3,6 +3,8 @@
 # usage:
 # curl -fsSL https://raw.githubusercontent.com/copperlight/dotfiles/master/bootstrap.sh | /bin/bash
 
+DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
+
 # osx command line tools
 xcode-select --install
 
@@ -14,7 +16,9 @@ packages=(
     "fish"
     "git"
     "leiningen"
+    "node"
     "pyenv"
+    "shellcheck"
     "the_silver_searcher"
 )
 
@@ -52,3 +56,13 @@ git clone git@github.com:copperlight/dotfiles.git $HOME/git/github/copperlight
 
 cd $HOME/git/github/copperlight/dotfiles/vim && ./update_bundles.py
 
+# sublime text
+PACKAGE_DIR="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+
+[[ ! -d "$PACKAGE_DIR" ]] && mkdir -p "$PACKAGE_DIR"
+
+curl -s -o "$PACKAGE_DIR/Package Control.sublime-package" \
+  "https://sublime.wbond.net/Package Control.sublime-package"
+
+cp "$DOTFILES_DIR/subl/User/Package Control.sublime-package" \
+  "$PACKAGE_DIR/Package Control.sublime-package"
