@@ -36,8 +36,10 @@ pyenv global 2.7.11
 
 packages=(
     "awscli"
+    "flake8"
     "gitpython"
     "ipython"
+    "jedi"
     "--no-binary :all: jupyter"
     "requests"
 )
@@ -57,12 +59,17 @@ git clone git@github.com:copperlight/dotfiles.git $HOME/git/github/copperlight
 cd $HOME/git/github/copperlight/dotfiles/vim && ./update_bundles.py
 
 # sublime text
-PACKAGE_DIR="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+INSTALLED_DIR="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+
+[[ ! -d "$INSTALLED_DIR" ]] && mkdir -p "$INSTALLED_DIR"
+
+curl -s -o "$INSTALLED_DIR/Package Control.sublime-package" \
+  "https://sublime.wbond.net/Package Control.sublime-package"
+
+PACKAGE_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
 [[ ! -d "$PACKAGE_DIR" ]] && mkdir -p "$PACKAGE_DIR"
 
-curl -s -o "$PACKAGE_DIR/Package Control.sublime-package" \
-  "https://sublime.wbond.net/Package Control.sublime-package"
-
 cp "$DOTFILES_DIR/subl/User/Package Control.sublime-package" \
   "$PACKAGE_DIR/Package Control.sublime-package"
+
