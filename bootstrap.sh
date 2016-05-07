@@ -15,6 +15,7 @@ packages=(
     "autojump"
     "fish"
     "git"
+    "jq"
     "leiningen"
     "node"
     "pyenv"
