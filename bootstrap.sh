@@ -22,6 +22,7 @@ packages=(
     "leiningen"
     "node"
     "pyenv"
+    "scala"
     "shellcheck"
     "tree"
     "the_silver_searcher"
@@ -69,6 +70,9 @@ done
 
 mkdir -p "$HOME/git/stash"
 mkdir -p "$HOME/git/github/copperlight"
+
+# npm
+npm install -g jshint
 
 # vim bundles
 git clone git@github.com:copperlight/dotfiles.git "$HOME/git/github/copperlight/dotfiles"
