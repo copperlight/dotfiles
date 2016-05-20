@@ -25,6 +25,7 @@ packages=(
     "shellcheck"
     "tree"
     "the_silver_searcher"
+    "zeromq"
 )
 
 for p in "${packages[@]}"; do
@@ -49,15 +50,18 @@ pip install flake8
 
 pyenv global 2.7.11
 
+easy_install pyzmq
+
+pip install pip --upgrade
+
 packages=(
     "awscli"
     "flake8"
     "gitpython"
     "jedi"
+    "jupyter"
     "requests"
 )
-
-pip install pip --upgrade
 
 for p in "${packages[@]}"; do
     pip install "$p"
