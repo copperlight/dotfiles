@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # usage:
-# curl -fsSL https://raw.githubusercontent.com/copperlight/dotfiles/master/bootstrap.sh | /bin/bash
+# - install ssh keys
+# - curl -fsSL https://raw.githubusercontent.com/copperlight/dotfiles/master/bootstrap.sh | /bin/bash
 
 DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 
@@ -55,7 +56,7 @@ mkdir -p $HOME/git/stash
 mkdir -p $HOME/git/github/copperlight
 
 # vim bundles
-git clone git@github.com:copperlight/dotfiles.git $HOME/git/github/copperlight
+git clone git@github.com:copperlight/dotfiles.git $HOME/git/github/copperlight/dotfiles
 
 cd $HOME/git/github/copperlight/dotfiles/vim && ./update_bundles.py
 
@@ -71,6 +72,6 @@ PACKAGE_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 
 [[ ! -d "$PACKAGE_DIR" ]] && mkdir -p "$PACKAGE_DIR"
 
-cp "$DOTFILES_DIR/subl/User/Package Control.sublime-package" \
-  "$PACKAGE_DIR/Package Control.sublime-package"
+cp "$DOTFILES_DIR/subl/User/Package Control.sublime-settings" \
+  "$PACKAGE_DIR/Package Control.sublime-settings"
 

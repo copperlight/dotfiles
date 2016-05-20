@@ -47,6 +47,8 @@ parser.add_argument('--force', action="store_true", help="force update")
 args = parser.parse_args()
 
 bundles_dir = "{}/bundle".format(os.path.dirname(os.path.abspath(__file__)))
+if not os.path.isdir(bundles_dir):
+    os.makedirs(bundles_dir)
 os.chdir(bundles_dir)
 
 if args.force:
