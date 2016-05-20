@@ -3,6 +3,8 @@
 # usage:
 # - install ssh keys
 # - curl -fsSL https://raw.githubusercontent.com/copperlight/dotfiles/master/bootstrap.sh | /bin/bash
+# - install sublime text; start st; quit st; start st
+# - init-dots.sh
 
 DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 
@@ -21,12 +23,17 @@ packages=(
     "node"
     "pyenv"
     "shellcheck"
+    "tree"
     "the_silver_searcher"
 )
 
 for p in "${packages[@]}"; do
-    brew install $p
+    brew install "$p"
 done
+
+# java
+brew cask install caskroom/versions/java7
+brew cask install java
 
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
@@ -34,31 +41,35 @@ eval "$(pyenv init -)"
 
 pyenv install 2.7.11
 pyenv install 3.5.1
+
+pyenv global 3.5.1
+
+pip install pip --upgrade
+pip install flake8
+
 pyenv global 2.7.11
 
 packages=(
     "awscli"
     "flake8"
     "gitpython"
-    "ipython"
     "jedi"
-    "--no-binary :all: jupyter"
     "requests"
 )
 
 pip install pip --upgrade
 
 for p in "${packages[@]}"; do
-    pip install $p
+    pip install "$p"
 done
 
-mkdir -p $HOME/git/stash
-mkdir -p $HOME/git/github/copperlight
+mkdir -p "$HOME/git/stash"
+mkdir -p "$HOME/git/github/copperlight"
 
 # vim bundles
-git clone git@github.com:copperlight/dotfiles.git $HOME/git/github/copperlight/dotfiles
+git clone git@github.com:copperlight/dotfiles.git "$HOME/git/github/copperlight/dotfiles"
 
-cd $HOME/git/github/copperlight/dotfiles/vim && ./update_bundles.py
+cd "$HOME/git/github/copperlight/dotfiles/vim" && ./update_bundles.py
 
 # sublime text
 INSTALLED_DIR="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
