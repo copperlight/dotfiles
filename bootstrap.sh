@@ -41,8 +41,8 @@ brew cask install java
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv init -)"
 
-pyenv install 2.7.11
-pyenv install 3.5.1
+env PYTHON_CONFIGURE_OPTS="--enable-framework --enable-unicode=ucs2" pyenv install 2.7.11
+env PYTHON_CONFIGURE_OPTS="--enable-framework --enable-unicode=ucs2" pyenv install 3.5.1
 
 pyenv global 3.5.1
 
