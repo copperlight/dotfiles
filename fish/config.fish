@@ -20,7 +20,7 @@ if which pyenv > /dev/null
 end
 
 # terminal
-set -x PATH $PATH /usr/local/sbin $HOME/bin $GOBIN
+set -x PATH $PATH $HOME/bin $GOBIN
 
 # secrets
 for file in $HOME/.dotfiles.d/*.fish
