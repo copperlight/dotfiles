@@ -36,6 +36,7 @@ done
 # java
 brew cask install caskroom/versions/java7
 brew cask install java
+brew cask install jce-unlimited-strength-policy
 
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
