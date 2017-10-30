@@ -7,7 +7,7 @@ test -s (brew --prefix)/share/autojump/autojump.fish; and source (brew --prefix)
 # java
 set -x JAVA8_HOME (/usr/libexec/java_home -v 1.8)  # brew cask install caskroom/versions/java8
 set -x JAVA9_HOME (/usr/libexec/java_home -v 1.9)  # brew cask install java
-set -x JAVA_HOME $JAVA9_HOME
+set -x JAVA_HOME $JAVA8_HOME
 
 # go
 set -x GOPATH $HOME/gopath
