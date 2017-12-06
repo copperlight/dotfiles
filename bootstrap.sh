@@ -34,6 +34,7 @@ for p in "${packages[@]}"; do
 done
 
 # java
+brew tap caskroom/versions
 brew cask install java8
 brew cask install java
 
