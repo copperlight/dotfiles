@@ -34,27 +34,23 @@ for p in "${packages[@]}"; do
 done
 
 # java
-brew cask install caskroom/versions/java7
+brew cask install java8
 brew cask install java
-brew cask install jce-unlimited-strength-policy
+
+JAVA_SECURITY="$(/usr/libexec/java_home -v 1.8)/jre/lib/security/java.security"
+sed -i -e "s/^#crypto.policy=unlimited/crypto.policy=unlimited/g" $JAVA_SECURITY
 
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv init -)"
 
-env PYTHON_CONFIGURE_OPTS="--enable-framework --enable-unicode=ucs2" pyenv install 2.7.11
-env PYTHON_CONFIGURE_OPTS="--enable-framework --enable-unicode=ucs2" pyenv install 3.5.1
+env PYTHON_CONFIGURE_OPTS="--enable-framework --enable-unicode=ucs2" pyenv install 2.7.14
+env PYTHON_CONFIGURE_OPTS="--enable-framework --enable-unicode=ucs2" pyenv install 3.6.3
 
-pyenv global 3.5.1
+pyenv global 3.6.3 2.7.14
 
 pip install pip --upgrade
 pip install flake8
-
-pyenv global 2.7.11
-
-easy_install pyzmq
-
-pip install pip --upgrade
 
 packages=(
     "awscli"
