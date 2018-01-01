@@ -44,7 +44,6 @@ alias curl="curl -g"
 alias g="gvim --remote-silent"
 
 # secrets
-
 for file in "$HOME"/.dotfiles.d/*.bash; do
     . $file
 done
