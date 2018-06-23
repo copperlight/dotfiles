@@ -5,8 +5,8 @@ set -x ANSIBLE_HOST_KEY_CHECKING False
 test -s (brew --prefix)/share/autojump/autojump.fish; and source (brew --prefix)/share/autojump/autojump.fish
 
 # java
-set -x JAVA8_HOME (/usr/libexec/java_home -v 1.8)  # brew cask install caskroom/versions/java8
-set -x JAVA9_HOME (/usr/libexec/java_home -v 9.0)  # brew cask install java
+set -x JAVA8_HOME (/usr/libexec/java_home -v 1.8)    # brew cask install java8
+set -x JAVA10_HOME (/usr/libexec/java_home -v 10.0)  # brew cask install java
 set -x JAVA_HOME $JAVA8_HOME
 
 # go
