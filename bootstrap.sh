@@ -16,8 +16,9 @@ xcode-select --install
 
 packages=(
     "autojump"
-    "fish"
+    "coreutils"
     "git"
+    "gnu-sed"
     "jq"
     "leiningen"
     "node"
@@ -26,7 +27,6 @@ packages=(
     "shellcheck"
     "tree"
     "the_silver_searcher"
-    "zeromq"
 )
 
 for p in "${packages[@]}"; do
