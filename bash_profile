@@ -12,19 +12,9 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
-# java
-export JAVA8_HOME="$(/usr/libexec/java_home -v 1.8)"
-export JAVA10_HOME="$(/usr/libexec/java_home -v 10.0)"
-export JAVA_HOME="$JAVA8_HOME"
-
-switch_jdk() {
-    if echo "$JAVA_HOME" |grep -q 1.8; then
-        export JAVA_HOME="$JAVA10_HOME"
-    else
-        export JAVA_HOME="$JAVA8_HOME"
-    fi
-    echo "JAVA_HOME=$JAVA_HOME"
-}
+# mojave setup for pyenv
+# xcode-select --install
+# sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
 
 # go
 export GOPATH="$HOME/gopath"
@@ -46,3 +36,7 @@ for file in "$HOME"/.dotfiles.d/*.bash; do
     . $file
 done
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/matthewj/.sdkman"
+[[ -s "/Users/matthewj/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/matthewj/.sdkman/bin/sdkman-init.sh"
