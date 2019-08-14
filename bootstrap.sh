@@ -6,8 +6,6 @@
 # - install sublime text; start st; quit st; start st
 # - init-dots.sh
 
-DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
-
 # osx command line tools
 xcode-select --install
 
