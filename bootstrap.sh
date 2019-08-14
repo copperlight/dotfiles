@@ -15,7 +15,6 @@ xcode-select --install
 curl -s "https://get.sdkman.io" | bash
 
 sdk install java 8.0.222-zulu
-sdk install java 12.0.2-zulu
 
 # homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -29,6 +28,7 @@ packages=(
     "leiningen"
     "node"
     "pyenv"
+    "sbt"
     "scala"
     "shellcheck"
     "tree"
@@ -43,8 +43,7 @@ done
 export PYENV_ROOT=/usr/local/var/pyenv
 eval "$(pyenv init -)"
 
-env PYTHON_CONFIGURE_OPTS="--enable-framework --enable-unicode=ucs2" pyenv install 3.7.4
-
+pyenv install 3.7.4
 pyenv global 3.7.4
 
 # git directories
