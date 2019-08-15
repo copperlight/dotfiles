@@ -25,6 +25,7 @@ packages=(
     "jq"
     "leiningen"
     "node"
+    "pet"
     "pyenv"
     "sbt"
     "scala"
