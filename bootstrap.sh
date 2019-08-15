@@ -25,7 +25,6 @@ packages=(
     "jq"
     "leiningen"
     "node"
-    "pet"
     "pyenv"
     "sbt"
     "scala"
@@ -37,6 +36,8 @@ packages=(
 for p in "${packages[@]}"; do
     brew install "$p"
 done
+
+brew install knqyf263/pet/pet
 
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
