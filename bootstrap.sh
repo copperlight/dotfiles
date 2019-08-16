@@ -19,6 +19,8 @@ sdk install java 8.0.222-zulu
 
 packages=(
     "autojump"
+    "bash"
+    "bash-git-prompt"
     "coreutils"
     "git"
     "gnu-sed"
@@ -38,6 +40,10 @@ for p in "${packages[@]}"; do
 done
 
 brew install knqyf263/pet/pet
+
+# bash
+sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
+chsh -s /usr/local/bin/bash
 
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
