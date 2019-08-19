@@ -52,6 +52,9 @@ eval "$(pyenv init -)"
 pyenv install 3.7.4
 pyenv global 3.7.4
 
+mkdir -p "$HOME/.config/pip"
+touch "$HOME/.config/pip/pip.conf"
+
 # git directories
 mkdir -p "$HOME/git/stash"
 mkdir -p "$HOME/git/github/copperlight"
