@@ -30,7 +30,6 @@ packages=(
     "pyenv"
     "sbt"
     "scala"
-    "scalafmt"
     "shellcheck"
     "tree"
     "the_silver_searcher"
@@ -41,6 +40,7 @@ for p in "${packages[@]}"; do
 done
 
 brew install knqyf263/pet/pet
+brew install --HEAD olafurpg/scalafmt/scalafmt
 
 # bash
 sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
