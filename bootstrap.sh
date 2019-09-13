@@ -30,6 +30,7 @@ packages=(
     "pyenv"
     "sbt"
     "scala"
+    "scalafmt"
     "shellcheck"
     "tree"
     "the_silver_searcher"
