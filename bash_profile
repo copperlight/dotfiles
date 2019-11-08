@@ -16,6 +16,9 @@ fi
 export GOPATH="$HOME/gopath"
 export GOBIN="$GOPATH/bin"
 
+# groovy
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -35,3 +38,4 @@ done
 # sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
