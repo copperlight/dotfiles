@@ -29,5 +29,8 @@ done
 # install dotfiles
 ln -nsf "$DOTFILES_DIR/bash_profile" "$HOME/.bash_profile"
 
+# install vimrc
+ln -nsf "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
+
 # cleanup
 rm -rf "$TMP_DIR"
