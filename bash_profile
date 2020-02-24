@@ -23,6 +23,9 @@ export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # terminal
 export CLICOLOR=true
 export PATH="$PATH:/usr/local/sbin:$HOME/bin"
