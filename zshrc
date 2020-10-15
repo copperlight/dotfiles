@@ -5,6 +5,11 @@
 export GOPATH="$HOME/gopath"
 export GOBIN="$GOPATH/bin"
 
+# java
+export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
+export JAVA_HOME=$JAVA11_HOME
+
 # pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
@@ -19,6 +24,3 @@ for file in "$HOME"/.dotfiles.d/*.bash; do
     . $file
 done
 
-# sdkman
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
