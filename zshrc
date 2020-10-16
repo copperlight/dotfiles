@@ -23,8 +23,7 @@ alias icat="kitty +kitten icat"
 setopt prompt_subst
 autoload -U colors && colors # enable colors in prompt
 
-export PS1='
-$(ssh_info)%{$fg[magenta]%}%~%u $(git_info)
+export PS1='$(ssh_info)%{$fg[magenta]%}%~%u $(git_info)
 %(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} '
 
 # secrets & snippets
