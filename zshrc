@@ -28,5 +28,5 @@ export PS1='%{$fg[magenta]%}%~%u $(git_info)
 
 # secrets & snippets
 for file in "$HOME"/.dotfiles.d/*.bash; do
-    . $file
+    [[ -e $file ]] && . $file
 done
