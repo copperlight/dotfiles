@@ -19,8 +19,15 @@ export PATH="$PATH:/usr/local/sbin:$HOME/bin"
 
 alias icat="kitty +kitten icat"
 
-# secrets
+# git prompt - https://joshdick.net/2017/06/08/my_git_prompt_for_zsh_revisited.html
+setopt prompt_subst
+autoload -U colors && colors # enable colors in prompt
+
+export PS1='
+$(ssh_info)%{$fg[magenta]%}%~%u $(git_info)
+%(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} '
+
+# secrets & snippets
 for file in "$HOME"/.dotfiles.d/*.bash; do
     . $file
 done
-

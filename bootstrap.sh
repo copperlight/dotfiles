@@ -1,36 +1,19 @@
-#!/bin/bash
-
-# usage:
-# - install ssh keys
-# - curl -fsSL https://raw.githubusercontent.com/copperlight/dotfiles/master/bootstrap.sh | /bin/bash
-# - install sublime text; start st; quit st; start st
-# - init-dots.sh
+#!/usr/bin/env bash
 
 # osx command line tools
 xcode-select --install
 
-# sdkman
-curl -s "https://get.sdkman.io" | bash
-
-sdk install java 8.0.222-zulu
-
 # homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 packages=(
     "autojump"
-    "bash"
-    "bash-git-prompt"
+    "cloc"
     "coreutils"
-    "git"
     "gnu-sed"
+    "imagemagick"
     "jq"
-    "leiningen"
-    "node"
     "pyenv"
-    "sbt"
-    "scala"
-    "shellcheck"
     "tree"
     "the_silver_searcher"
 )
@@ -42,23 +25,25 @@ done
 brew install knqyf263/pet/pet
 brew install --HEAD olafurpg/scalafmt/scalafmt
 
-# bash
-sudo sh -c 'echo /usr/local/bin/bash >> /etc/shells'
-chsh -s /usr/local/bin/bash
-
-# pyenv
-export PYENV_ROOT=/usr/local/var/pyenv
+# python
 eval "$(pyenv init -)"
 
-pyenv install 3.7.4
-pyenv global 3.7.4
+pyenv install 2.7.17
+pyenv install 3.5.19
+pyenv install 3.6.10
+pyenv install 3.7.5
+pyenv install 3.8.1
+pyenv global 3.7.5 3.8.1 3.6.10 3.5.9
 
-mkdir -p "$HOME/.config/pip"
-touch "$HOME/.config/pip/pip.conf"
+# java
+pushd "$HOME/Downloads" || exit 1
+curl -O https://cdn.azul.com/zulu/bin/zulu11.41.23-ca-jdk11.0.8-macosx_x64.dmg
+curl -O https://cdn.azul.com/zulu/bin/zulu8.48.0.53-ca-jdk8.0.265-macosx_x64.dmg
+popd || exit 1
 
-# git directories
+# git
 mkdir -p "$HOME/git/stash"
 mkdir -p "$HOME/git/github/copperlight"
-
-# npm
-npm install -g jshint
+pushd "$HOME/git/github/copperlight" || exit 1
+git clone git@github.com:copperlight/dotfiles.git
+popd || exit 1
