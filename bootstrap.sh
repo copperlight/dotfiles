@@ -18,6 +18,7 @@ packages=(
     "gnu-sed"
     "imagemagick"
     "jq"
+    "node"
     "pyenv"
     "tree"
     "the_silver_searcher"
