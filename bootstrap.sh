@@ -5,7 +5,7 @@ curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 mkdir -p "$HOME"/bin
 ln -nsf /Applications/kitty.app/Contents/MacOS/kitty "$HOME"/bin/kitty
 
-# osx command line tools
+# macos command line tools
 xcode-select --install
 
 # homebrew
