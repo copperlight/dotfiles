@@ -15,4 +15,3 @@ set shiftwidth=4
 
 " replace tabs with spaces
 set expandtab
-
