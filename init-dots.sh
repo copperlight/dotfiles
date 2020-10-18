@@ -2,6 +2,9 @@
 
 DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 
+# icloud drive
+ln -nsf "$HOME/Library/Mobile Documents/com~apple~CloudDocs" "$HOME/CloudDocs"
+
 # secrets & snippets
 mkdir -p "$HOME/.dotfiles.d"
 
