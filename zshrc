@@ -17,6 +17,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export CLICOLOR=true
 export PATH="$PATH:/usr/local/sbin:$HOME/bin"
 
+alias d="kitty +kitten diff"
 alias icat="kitty +kitten icat"
 
 # git prompt - https://joshdick.net/2017/06/08/my_git_prompt_for_zsh_revisited.html
