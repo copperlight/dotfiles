@@ -35,7 +35,7 @@ brew install --HEAD olafurpg/scalafmt/scalafmt
 eval "$(pyenv init -)"
 
 pyenv install 2.7.17
-pyenv install 3.5.19
+pyenv install 3.5.9
 pyenv install 3.6.10
 pyenv install 3.7.5
 pyenv install 3.8.1
