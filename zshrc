@@ -19,6 +19,7 @@ export PATH="$PATH:/usr/local/sbin:$HOME/bin"
 
 alias d="kitty +kitten diff"
 alias icat="kitty +kitten icat"
+alias kssh="kitty +kitten ssh"
 
 # git prompt - https://joshdick.net/2017/06/08/my_git_prompt_for_zsh_revisited.html
 setopt prompt_subst
