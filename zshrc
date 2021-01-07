@@ -15,7 +15,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # terminal
 export CLICOLOR=true
-export PATH="$PATH:/usr/local/sbin:$HOME/bin"
+export PATH="$PATH:/usr/local/sbin:$GOBIN:$HOME/bin"
 
 alias d="kitty +kitten diff"
 alias icat="kitty +kitten icat"
