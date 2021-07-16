@@ -11,7 +11,8 @@ export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_HOME=$JAVA11_HOME
 
 # pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PYENV_ROOT="$HOME/.pyenv"
+if which pyenv > /dev/null; then eval "$(pyenv init --path)"; fi
 
 # terminal
 export CLICOLOR=true
@@ -32,3 +33,4 @@ export PS1='%{$fg[magenta]%}%~%u $(git_info)
 for file in "$HOME"/.dotfiles.d/*.bash; do
     [[ -e $file ]] && . $file
 done
+
