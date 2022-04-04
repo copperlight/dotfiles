@@ -14,6 +14,9 @@ export JAVA_HOME=$JAVA11_HOME
 export PYENV_ROOT="$HOME/.pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init --path)"; fi
 
+# vcpkg
+export VCPKG_ROOT="$HOME/vcpkg"
+
 # terminal
 export CLICOLOR=true
 export PATH="$PATH:/usr/local/sbin:$GOBIN:$HOME/bin"
