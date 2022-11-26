@@ -17,3 +17,5 @@ ln -nsf "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
 
 # zsh
 ln -nsf "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
+ln -nsf "$DOTFILES_DIR/zprofile" "$HOME/.zprofile"
+
