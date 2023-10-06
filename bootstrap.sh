@@ -1,24 +1,16 @@
 #!/usr/bin/env bash
 
-# kitty
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-mkdir -p "$HOME"/bin
-ln -nsf /Applications/kitty.app/Contents/MacOS/kitty "$HOME"/bin/kitty
-
 # macos command line tools
 xcode-select --install
 
 # homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 packages=(
     "autojump"
     "cloc"
-    "coreutils"
-    "gnu-sed"
-    "imagemagick"
+    "go"
     "jq"
-    "node"
     "pyenv"
     "tree"
     "the_silver_searcher"
@@ -28,26 +20,30 @@ for p in "${packages[@]}"; do
     brew install "$p"
 done
 
+# pet
 brew install knqyf263/pet/pet
-brew install --HEAD olafurpg/scalafmt/scalafmt
+
+# scalafmt
+brew install coursier/formulas/coursier
+coursier install scalafmt
+ln -s "$HOME/Library/Application Support/Coursier/bin"/* "$HOME/bin"
+
+# java
+curl -s "https://get.sdkman.io" | bash
+
+sdk install java 17.0.8-zulu
 
 # python
 eval "$(pyenv init -)"
 
-pyenv install 2.7.17
-pyenv install 3.5.9
-pyenv install 3.6.10
-pyenv install 3.7.5
-pyenv install 3.8.1
-pyenv global 3.7.5 3.8.1 3.6.10 3.5.9
+pyenv install 3.11.5
+pyenv global 3.11.5
 
-# java
-pushd "$HOME/Downloads" || exit 1
-curl -O https://cdn.azul.com/zulu/bin/zulu11.41.23-ca-jdk11.0.8-macosx_x64.dmg
-curl -O https://cdn.azul.com/zulu/bin/zulu8.48.0.53-ca-jdk8.0.265-macosx_x64.dmg
-popd || exit 1
+# icloud drive
+ln -nsf "$HOME/Library/Mobile Documents/com~apple~CloudDocs" "$HOME/CloudDocs"
 
 # git
+mkdir -p bin
 mkdir -p "$HOME/git/stash"
 mkdir -p "$HOME/git/github/copperlight"
 pushd "$HOME/git/github/copperlight" || exit 1

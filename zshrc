@@ -1,3 +1,6 @@
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # autojump
 [[ -s "$(brew --prefix)/etc/profile.d/autojump.sh" ]] && . "$(brew --prefix)/etc/profile.d/autojump.sh"
 
@@ -5,21 +8,20 @@
 export GOPATH="$HOME/gopath"
 export GOBIN="$GOPATH/bin"
 
-# java
-export JAVA8_HOME=$(/usr/libexec/java_home -v 1.8)
-export JAVA11_HOME=$(/usr/libexec/java_home -v 11)
-export JAVA_HOME=$JAVA11_HOME
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 if which pyenv > /dev/null; then eval "$(pyenv init --path)"; fi
+
+# sdkman
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # vcpkg
 export VCPKG_ROOT="$HOME/vcpkg"
 
 # terminal
 export CLICOLOR=true
-export PATH="$PATH:/usr/local/sbin:$GOBIN:$HOME/bin"
+export PATH="$PATH:$GOBIN:$HOME/bin"
 
 # git prompt - https://joshdick.net/2017/06/08/my_git_prompt_for_zsh_revisited.html
 setopt prompt_subst

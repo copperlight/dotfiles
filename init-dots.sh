@@ -2,9 +2,6 @@
 
 DOTFILES_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 
-# icloud drive
-ln -nsf "$HOME/Library/Mobile Documents/com~apple~CloudDocs" "$HOME/CloudDocs"
-
 # secrets & snippets
 mkdir -p "$HOME/.dotfiles.d"
 
@@ -17,5 +14,3 @@ ln -nsf "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
 
 # zsh
 ln -nsf "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
-ln -nsf "$DOTFILES_DIR/zprofile" "$HOME/.zprofile"
-
