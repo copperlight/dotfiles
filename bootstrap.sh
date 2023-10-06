@@ -9,6 +9,7 @@ xcode-select --install
 packages=(
     "autojump"
     "cloc"
+    "cmake"
     "go"
     "jq"
     "pyenv"
