@@ -21,7 +21,7 @@ export VCPKG_ROOT="$HOME/vcpkg"
 
 # terminal
 export CLICOLOR=true
-export PATH="$PATH:$GOBIN:$HOME/bin"
+export PATH="$PATH:$GOBIN:$HOME/bin:$HOME/.local/bin"
 
 # git prompt - https://joshdick.net/2017/06/08/my_git_prompt_for_zsh_revisited.html
 setopt prompt_subst
